@@ -1,5 +1,14 @@
 package com.example.rowcoldemo
 
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.size
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,7 +19,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.rowcoldemo.ui.theme.RowColDemoTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +28,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             RowColDemoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    MainScreen(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -31,17 +38,35 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun MainScreen(modifier: Modifier = Modifier) {
+    Row(modifier) {
+        TextCell("1")
+        TextCell("2")
+        TextCell("3")
+    }
+}
+
+@Composable
+fun TextCell(text: String, modifier: Modifier = Modifier) {
+
+    val cellModifier = modifier
+        .padding(all = 4.dp)
+        .size(width = 100.dp, height = 100.dp)
+        .border(width = 4.dp, color = Color.Black)
+
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        text = text,
+        modifier = cellModifier.then(modifier),
+        fontSize = 80.sp,
+        fontWeight = FontWeight.Bold,
+        textAlign = TextAlign.Center
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun MainScreenPreview() {
     RowColDemoTheme {
-        Greeting("Android")
+        MainScreen()
     }
 }
