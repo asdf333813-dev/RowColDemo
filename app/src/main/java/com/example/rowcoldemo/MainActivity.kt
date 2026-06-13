@@ -1,7 +1,6 @@
 package com.example.rowcoldemo
 
 import androidx.compose.foundation.layout.Column
-
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.size
@@ -42,7 +41,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
     Column(
-        horizontalAlignment = Alignment.End,
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier.size(width = 400.dp, height = 400.dp)
     ) {
         TextCell("1")
