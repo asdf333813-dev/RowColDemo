@@ -1,5 +1,7 @@
 package com.example.rowcoldemo
 
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.tooling.preview.Preview
@@ -40,9 +42,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Column(
-        horizontalAlignment = Alignment.Start,
-        modifier = modifier.size(width = 400.dp, height = 400.dp)
+    Row(
+        horizontalArrangement = Arrangement.End,
+        modifier = modifier.size(width = 400.dp, height = 200.dp)
     ) {
         TextCell("1")
         TextCell("2")
