@@ -1,5 +1,6 @@
 package com.example.rowcoldemo
 
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -42,9 +43,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Row(
-        horizontalArrangement = Arrangement.End,
-        modifier = modifier.size(width = 400.dp, height = 200.dp)
+    Column(
+        verticalArrangement = Arrangement.Bottom,
+        modifier = modifier.height(400.dp)
     ) {
         TextCell("1")
         TextCell("2")
