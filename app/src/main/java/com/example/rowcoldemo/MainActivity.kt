@@ -1,7 +1,7 @@
 package com.example.rowcoldemo
 
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.size
 import androidx.compose.ui.graphics.Color
@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Row(modifier) {
+    Column(modifier) {
         TextCell("1")
         TextCell("2")
         TextCell("3")
