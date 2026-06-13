@@ -1,5 +1,7 @@
 package com.example.rowcoldemo
 
+import androidx.compose.foundation.layout.paddingFrom
+import androidx.compose.ui.layout.FirstBaseline
 import androidx.compose.ui.layout.LastBaseline
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.height
@@ -48,14 +50,18 @@ fun MainScreen(modifier: Modifier = Modifier) {
     Row {
         Text(
             text = "Large Text\n\nMore Text",
-            modifier = Modifier.alignBy(LastBaseline),
+            modifier = Modifier.alignBy(FirstBaseline),
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold
         )
 
         Text(
             text = "Small Text",
-            modifier = Modifier.alignByBaseline(),
+            modifier = Modifier.paddingFrom(
+                alignmentLine = FirstBaseline,
+                before = 80.dp,
+                after = 0.dp
+            ),
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold
         )
